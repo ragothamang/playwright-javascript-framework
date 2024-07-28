@@ -1,0 +1,7 @@
+node_modules
+allure-results
+.cache
+.output
+screenshots
+reports
+allure-report

@@ -1,0 +1,12 @@
+[
+    {
+      "testCaseDescription": "valid user",
+      "lastname": "rg-tst-2-frm-json"
+    },
+    {
+      "testCaseDescription": "invalid user",
+      "lastname": "rg-tst-2-frm-json"
+      
+    }
+  ]
+  
