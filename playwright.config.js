@@ -24,7 +24,7 @@ module.exports = defineConfig({
     ],
     use: {
         baseURL: 'http://login.salesforce.com', // Replace with your base URL
-        headless: false,
+        headless: true,
         screenshot: 'only-on-failure',
         video: 'retain-on-failure',
         trace: 'retain-on-failure',
