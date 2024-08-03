@@ -1,6 +1,11 @@
 # Use the Playwright base image
 FROM mcr.microsoft.com/playwright:v1.45.3-focal
 
+# Install Node.js version 18
+RUN apt-get update && apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt-get install -y nodejs
+
 # Install required packages
 RUN apt-get update && apt-get install -y \
     xvfb \
@@ -12,7 +17,7 @@ RUN apt-get update && apt-get install -y \
     && npm install -g allure-commandline --save-dev
 
 # Set the working directory
-WORKDIR /usr/src/app
+# WORKDIR /usr/src/app
 
 # Copy package.json and install dependencies
 COPY package*.json ./
