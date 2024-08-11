@@ -27,7 +27,8 @@ module.exports = defineConfig({
         headless: true,
         screenshot: 'only-on-failure',
         video: 'retain-on-failure',
-        trace: 'retain-on-failure',
+        // video:'on',
+        trace: 'retain-on-failure'
     },
     outputDir: 'allure-results',
     retries: 0,
