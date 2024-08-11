@@ -1,6 +1,7 @@
 // salesforce-api.spec.js
 const { test, expect, request } = require('@playwright/test');
 const { authenticate } = require('../config/apiAuth');
+const { faker } = require('@faker-js/faker');
 
 test('Create a Salesforce record', async () => {
   const resToken = await authenticate();
@@ -14,13 +15,19 @@ test('Create a Salesforce record', async () => {
       'Content-Type': 'application/json'
     }
   });
+
+  // Generate random contact data using Faker
+  const firstName = faker.person.firstName();
+  const lastName = faker.person.lastName();
+  const email = faker.internet.email();
+  const phone = faker.string.numeric('##########'); // Generates a 10-digit phone number
 //   services/data/v61.0/sobjects/Contact
   const response = await apiContext.post('/services/data/v61.0/sobjects/Contact/', {
     data: {
-        FirstName: 'rg aug 9 fn test3',
-        LastName: 'rg aug 9 nn test3',
-        Email: 'rgaug9@test3.com',
-        Phone:'1234567899873'
+        FirstName: firstName, // 'rg aug 9 fn test3',
+        LastName: lastName, // 'rg aug 9 nn test3',
+        Email: email, // 'rgaug9@test3.com',
+        Phone: phone // '1234567899873'
     }
   });
 
